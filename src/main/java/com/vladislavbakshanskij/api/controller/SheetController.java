@@ -26,7 +26,7 @@ public class SheetController {
     @NotNull
     public String index(@NotNull HttpServletResponse httpServletResponse) {
         httpServletResponse.setHeader("Access-Control-Allow-Origin", "*");
-        return "{isWork:" + true + "}";
+        return "{\"isWork\":" + true + "}";
     }
 
     @NotNull
