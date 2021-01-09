@@ -31,7 +31,7 @@ public class SheetControllerTest {
         this.mockMvc.perform(get("/").accept(MediaType.APPLICATION_JSON))
             .andDo(print())
             .andExpect(status().isOk())
-            .andExpect(content().string(equalTo("{isWork:" + true + "}")));
+            .andExpect(content().string(equalTo("{\"isWork\":" + true + "}")));
     }
 
     @Test
