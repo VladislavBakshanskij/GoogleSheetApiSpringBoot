@@ -26,12 +26,12 @@ public class UnknownSheetServiceTest {
 
     @Test
     public void getByCount() throws IOException {
-        assertThat(this.unknownSheetService.getByCount(2))
+        assertThat(this.unknownSheetService.getCountData(2))
             .contains(false, "this is type not supported");
     }
 
     @Test
-    public void getById() throws IOException {
+    public void getById() {
         var obj = (Map<String, Object>) this.unknownSheetService.getById(2);
 
         assertThat(obj)
@@ -40,12 +40,12 @@ public class UnknownSheetServiceTest {
     }
 
     @Test
-    public void getSheetName() throws IOException {
+    public void getSheetName() {
         assertEquals(this.unknownSheetService.getSheetName(), "");
     }
 
     @Test
-    public void getCodeName() throws IOException {
+    public void getCodeName() {
         assertEquals(this.unknownSheetService.getSheetName(), "");
     }
 }

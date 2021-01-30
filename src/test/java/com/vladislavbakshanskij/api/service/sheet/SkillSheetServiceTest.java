@@ -23,7 +23,7 @@ public class SkillSheetServiceTest {
 
     @Test
     public void getByCount() throws IOException {
-        var skills = this.skillSheetService.getByCount(2);
+        var skills = this.skillSheetService.getCountData(2);
         assertEquals(skills.size(), 2);
     }
 
@@ -40,12 +40,12 @@ public class SkillSheetServiceTest {
     }
 
     @Test
-    public void getSheetName() throws IOException {
+    public void getSheetName() {
         assertEquals(this.skillSheetService.getSheetName(), "Skills");
     }
 
     @Test
-    public void getCodeName() throws IOException {
-        assertEquals(this.skillSheetService.getCodeName(), SKILL);
+    public void getCodeName() {
+        assertEquals(this.skillSheetService.getSheetType(), SKILL);
     }
 }

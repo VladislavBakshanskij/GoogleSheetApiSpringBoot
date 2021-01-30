@@ -1,5 +1,6 @@
 package com.vladislavbakshanskij.api.service;
 
+import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
 
 public enum SheetType {
@@ -9,21 +10,18 @@ public enum SheetType {
     WORK("work"),
     UNKNOWN("unknown")
     ;
-    private final String code;
 
-    SheetType(@NotNull String code) {
-        this.code = code;
+    @Getter
+    private final String codeName;
+
+    SheetType(@NotNull String codeName) {
+        this.codeName = codeName;
     }
 
     @NotNull
-    public String getCode() {
-        return this.code;
-    }
-
-    @NotNull
-    public static SheetType getSheetTypeByCode(@NotNull String code) {
+    public static SheetType getSheetTypeByCodeName(@NotNull String codeName) {
         for (SheetType value : values()) {
-            if (code.equalsIgnoreCase(value.getCode())) {
+            if (codeName.equalsIgnoreCase(value.getCodeName())) {
                 return value;
             }
         }

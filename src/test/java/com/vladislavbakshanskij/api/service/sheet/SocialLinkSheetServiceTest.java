@@ -23,7 +23,7 @@ public class SocialLinkSheetServiceTest {
 
     @Test
     public void getByCount() throws IOException {
-        var socialLinks = this.socialLinkSheetService.getByCount(2);
+        var socialLinks = this.socialLinkSheetService.getCountData(2);
         assertEquals(socialLinks.size(), 2);
     }
 
@@ -40,12 +40,12 @@ public class SocialLinkSheetServiceTest {
     }
 
     @Test
-    public void getSheetName() throws IOException {
+    public void getSheetName() {
         assertEquals(this.socialLinkSheetService.getSheetName(), "SocialLinks");
     }
 
     @Test
-    public void getCodeName() throws IOException {
-        assertEquals(this.socialLinkSheetService.getCodeName(), SOCIAL_LINK);
+    public void getCodeName() {
+        assertEquals(this.socialLinkSheetService.getSheetType(), SOCIAL_LINK);
     }
 }

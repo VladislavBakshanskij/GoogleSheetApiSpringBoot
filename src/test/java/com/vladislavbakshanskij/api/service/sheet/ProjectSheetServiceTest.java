@@ -23,7 +23,7 @@ public class ProjectSheetServiceTest {
 
     @Test
     public void getByCount() throws IOException {
-        var projects = this.projectSheetService.getByCount(2);
+        var projects = this.projectSheetService.getCountData(2);
         assertEquals(projects.size(), 2);
     }
 
@@ -46,6 +46,6 @@ public class ProjectSheetServiceTest {
 
     @Test
     public void getCodeName() {
-        assertEquals(this.projectSheetService.getCodeName(), PROJECT);
+        assertEquals(this.projectSheetService.getSheetType(), PROJECT);
     }
 }

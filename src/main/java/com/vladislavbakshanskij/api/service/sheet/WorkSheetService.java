@@ -1,6 +1,7 @@
 package com.vladislavbakshanskij.api.service.sheet;
 
 import com.vladislavbakshanskij.api.model.Work;
+import com.vladislavbakshanskij.api.service.Column;
 import com.vladislavbakshanskij.api.service.SheetType;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Service;
@@ -9,8 +10,8 @@ import org.springframework.stereotype.Service;
 public class WorkSheetService extends AbstractSheetService<Work> {
     public WorkSheetService() {
         super.converter = Work::createFromObjectList;
-        super.startCol = "A";
-        super.endCol = "F";
+        super.startCol = Column.A.getName();
+        super.endCol = Column.F.getName();
     }
 
     @Override
@@ -21,7 +22,7 @@ public class WorkSheetService extends AbstractSheetService<Work> {
 
     @Override
     @NotNull
-    public SheetType getCodeName() {
+    public SheetType getSheetType() {
         return SheetType.WORK;
     }
 }

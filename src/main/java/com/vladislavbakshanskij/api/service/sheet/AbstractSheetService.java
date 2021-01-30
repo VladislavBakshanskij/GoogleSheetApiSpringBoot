@@ -29,7 +29,7 @@ public abstract class AbstractSheetService<T> implements SheetService {
 
     @Override
     @NotNull
-    public List<Object> getByCount(int count) throws IOException {
+    public List<Object> getCountData(int count) throws IOException {
         var response = this.getValuesByRange(this.createRange(startCol, endCol));
 
         if (response == null || response.isEmpty()) {

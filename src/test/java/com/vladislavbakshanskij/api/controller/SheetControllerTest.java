@@ -37,7 +37,7 @@ public class SheetControllerTest {
     @Test
     public void getAllTest() throws Exception {
         for (SheetType value : SheetType.values()) {
-            this.mockMvc.perform(get("/all/" + value.getCode()))
+            this.mockMvc.perform(get("/all/" + value.getCodeName()))
                 .andDo(print())
                 .andExpect(status().isOk());
         }
@@ -46,7 +46,7 @@ public class SheetControllerTest {
     @Test
     public void getByCountTest() throws Exception {
         for (SheetType value : SheetType.values()) {
-            this.mockMvc.perform(get("/" + value.getCode() + "?count=2"))
+            this.mockMvc.perform(get("/" + value.getCodeName() + "?count=2"))
                 .andDo(print())
                 .andExpect(status().isOk());
         }

@@ -23,7 +23,7 @@ public class WorkSheetServiceTest {
 
     @Test
     public void getByCount() throws IOException {
-        var works = this.workSheetService.getByCount(2);
+        var works = this.workSheetService.getCountData(2);
         assertEquals(works.size(), 2);
     }
 
@@ -40,12 +40,12 @@ public class WorkSheetServiceTest {
     }
 
     @Test
-    public void getSheetName() throws IOException {
+    public void getSheetName() {
         assertEquals(this.workSheetService.getSheetName(), "Works");
     }
 
     @Test
-    public void getCodeName() throws IOException {
-        assertEquals(this.workSheetService.getCodeName(), WORK);
+    public void getCodeName() {
+        assertEquals(this.workSheetService.getSheetType(), WORK);
     }
 }

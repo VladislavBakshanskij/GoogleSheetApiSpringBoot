@@ -1,27 +1,33 @@
 package com.vladislavbakshanskij.api.service;
 
+import lombok.Getter;
+import org.jetbrains.annotations.NotNull;
+
 public enum Column {
-    A(0),
-    B(1),
-    C(2),
-    D(3),
-    E(4),
-    F(5);
+    A(0, "A"),
+    B(1, "B"),
+    C(2, "C"),
+    D(3, "D"),
+    E(4, "E"),
+    F(5, "F");
     /**
      * Index column in array.
      */
+    @Getter
     private final int id;
 
-    Column(int id) {
-        this.id = id;
-    }
+    /**
+     * Name col.
+     */
+    @Getter
+    private final String name;
 
     /**
-     * Returns the index column in array.
-     *
-     * @return index column in array.
+     * @param id - Index column in array.
+     * @param name - col name.
      */
-    public int getId() {
-        return id;
+    Column(int id, @NotNull String name) {
+        this.id = id;
+        this.name = name;
     }
 }

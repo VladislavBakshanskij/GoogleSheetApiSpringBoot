@@ -13,7 +13,7 @@ public interface SheetService {
     List<Object> getAll() throws IOException;
 
     @NotNull
-    List<Object> getByCount(int count) throws IOException;
+    List<Object> getCountData(int count) throws IOException;
 
     @NotNull
     Object getById(int id) throws IOException;
@@ -22,7 +22,7 @@ public interface SheetService {
     String getSheetName();
 
     @NotNull
-    SheetType getCodeName();
+    SheetType getSheetType();
 
     @NotNull
     default String createRange(@NotNull String sheetName, @NotNull String startCol, @NotNull String endCol) {

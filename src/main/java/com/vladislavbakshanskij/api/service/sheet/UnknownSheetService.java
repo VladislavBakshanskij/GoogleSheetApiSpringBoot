@@ -24,13 +24,13 @@ public class UnknownSheetService implements SheetService {
 
     @Override
     @NotNull
-    public List<Object> getByCount(int count) throws IOException {
+    public List<Object> getCountData(int count) throws IOException {
         return getAll();
     }
 
     @Override
     @NotNull
-    public Object getById(int id) throws IOException {
+    public Object getById(int id) {
         return new HashMap<>() {{
             put("status", false);
             put("message", "this is type not supported");
@@ -45,7 +45,7 @@ public class UnknownSheetService implements SheetService {
 
     @Override
     @NotNull
-    public SheetType getCodeName() {
+    public SheetType getSheetType() {
         return SheetType.UNKNOWN;
     }
 
