@@ -1,18 +1,14 @@
 package com.vladislavbakshanskij.api.model;
 
+import com.vladislavbakshanskij.api.service.Column;
 import lombok.Builder;
 import lombok.Data;
-import com.vladislavbakshanskij.api.service.Column;
 import org.jetbrains.annotations.NotNull;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Component
 @Data
 @Builder
-@Scope("prototype")
 public class Skill {
     /**
      * Skill id.
@@ -48,10 +44,10 @@ public class Skill {
             level = row.get(Column.C.getId()).toString();
         }
 
-        return builder().
-            id(id).
-            level(level).
-            name(name).
-            build();
+        return builder()
+                .id(id)
+                .level(level)
+                .name(name)
+                .build();
     }
 }

@@ -1,18 +1,14 @@
 package com.vladislavbakshanskij.api.model;
 
+import com.vladislavbakshanskij.api.service.Column;
 import lombok.Builder;
 import lombok.Data;
-import com.vladislavbakshanskij.api.service.Column;
 import org.jetbrains.annotations.NotNull;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Component
 @Data
 @Builder
-@Scope("prototype")
 public class SocialLink {
     /**
      * Link id.
@@ -44,10 +40,10 @@ public class SocialLink {
         var link = row.get(Column.B.getId()).toString();
         var name = row.get(Column.C.getId()).toString();
 
-        return builder().
-            id(id).
-            link(link).
-            name(name).
-            build();
+        return builder()
+                .id(id)
+                .link(link)
+                .name(name)
+                .build();
     }
 }

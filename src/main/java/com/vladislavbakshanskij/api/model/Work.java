@@ -1,18 +1,14 @@
 package com.vladislavbakshanskij.api.model;
 
+import com.vladislavbakshanskij.api.service.Column;
 import lombok.Builder;
 import lombok.Data;
-import com.vladislavbakshanskij.api.service.Column;
 import org.jetbrains.annotations.NotNull;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Component
 @Data
 @Builder
-@Scope("prototype")
 public class Work {
     /**
      * Id work.
@@ -65,13 +61,13 @@ public class Work {
         var dateEnd = row.get(Column.E.getId()).toString();
         var responsibilities = row.get(Column.F.getId()).toString().split(",\\s");
 
-        return builder().
-            id(id).
-            organization(organization).
-            position(position).
-            dateStart(dateStart).
-            dateEnd(dateEnd).
-            responsibilities(responsibilities).
-            build();
+        return builder()
+                .id(id)
+                .organization(organization)
+                .position(position)
+                .dateStart(dateStart)
+                .dateEnd(dateEnd)
+                .responsibilities(responsibilities)
+                .build();
     }
 }
